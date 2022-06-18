@@ -1,0 +1,37 @@
+<h2 class="text-center">All Flights Information</h2>
+<table class="table table-dark">
+    <thead>
+      <tr>
+       
+        <th>FlightNumber</th>
+        <th>OperatingAirlines</th>
+        <th>FromPlace</th>
+        <th>ToPlace</th>
+        <th>StartDate</th>
+        <th>EndDate</th>
+        <th>ScheduleDays</th>
+        <th>BusinessSeat</th>
+        <th>Non-BusinessSeats</th>
+        <th>Cost</th>
+        <th>DateOfDeparture</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of allflights">
+       
+        <td>{{flight.flightNumber}}</td>
+        <td>{{flight.operatingAirlines}}</td>
+        <td>{{flight.fromPlace }}</td>
+        <td>{{flight.toPlace }}</td>
+        <td>{{flight.startDate | date}}</td>
+        <td>{{flight.endDate | date}}</td>
+        <td>{{flight.scheduleDays }}</td>
+        <td>{{flight.businessSeats }}</td>
+        <td>{{flight.nonBusinessSeats}}</td>
+        <td>{{flight.cost | currency:'INR'}}</td>
+        <td>{{flight.dateOfDeparture | date}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
