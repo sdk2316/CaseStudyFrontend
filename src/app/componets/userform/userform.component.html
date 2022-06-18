@@ -1,0 +1,50 @@
+<div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Enter your name</span>
+  <input type="text" [(ngModel)]="user.name" placeholder="enter your name" class="form-control"
+    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+</div>
+
+<br />
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Enter your Age</span>
+  <input [(ngModel)]="user.age" placeholder="enter your age" type="text" class="form-control"
+    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+</div>
+
+<br />
+<div class="form-check">
+  <input class="form-check-input" [(ngModel)]="user.Gender" value="Male" type="radio" name="flexRadioDefault"
+    id="flexRadioDefault1" />
+  <label class="form-check-label" for="flexRadioDefault1"> Male </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" [(ngModel)]="user.Gender" value="Female" name="flexRadioDefault"
+    id="flexRadioDefault2" checked />
+  <label class="form-check-label" for="flexRadioDefault2"> Female </label>
+</div>
+<br />
+
+<button type="button" (click)="save()" class="btn btn-secondary btn-lg">
+  Submit
+</button>
+
+<br />
+<br />
+<br />
+
+<button type="button" (click)="sort()" class="btn btn-secondary btn-lg"> Sort</button>
+
+<ol class="list-group list-group-numbered">
+  <li class="list-group-item" *ngFor="let u of users; index as i">
+    <span> User's name is : {{ u.name | uppercase}}</span>
+    <br />
+    <span>User's age is : {{ u.age }}</span>
+    <br />
+    <span>User's Gender is : {{ u.Gender }}</span>
+    <br />
+    <button style="margin: 1%" (click)="deleteRow(u, i)" type="button" class="btn btn-danger">
+      Delete user
+    </button>
+  </li>
+</ol>

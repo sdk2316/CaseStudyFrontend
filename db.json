@@ -1,0 +1,93 @@
+{
+  "users": [
+    {
+      "name": "Durgesh",
+      "age": 27,
+      "Gender": "Male",
+      "id": 1
+    },
+    {
+      "name": "Sbnm",
+      "age": "23",
+      "Gender": "Female",
+      "id": 3
+    },
+    {
+      "name": "anup",
+      "age": "25",
+      "Gender": "Male",
+      "id": 4
+    },
+    {
+      "name": "rajesh",
+      "age": "25",
+      "Gender": "Male",
+      "id": 6
+    },
+    {
+      "name": "anit",
+      "age": "18",
+      "Gender": "Male",
+      "id": 8
+    },
+    {
+      "name": "sunny",
+      "age": "5",
+      "Gender": "Female",
+      "id": 10
+    },
+    {
+      "name": "sam",
+      "age": "2",
+      "Gender": "Female",
+      "id": 11
+    },
+    {
+      "name": "dk",
+      "age": "25",
+      "Gender": "Male",
+      "id": 12
+    },
+    {
+      "name": "sam s",
+      "age": "24",
+      "Gender": "Female",
+      "id": 13
+    },
+    {
+      "name": "",
+      "Gender": "",
+      "id": 14
+    },
+    {
+      "name": "",
+      "Gender": "",
+      "id": 15
+    },
+    {
+      "name": "",
+      "Gender": "",
+      "id": 16
+    },
+    {
+      "name": "",
+      "Gender": "",
+      "id": 17
+    },
+    {
+      "name": "",
+      "Gender": "",
+      "id": 18
+    },
+    {
+      "name": "",
+      "Gender": "",
+      "id": 19
+    },
+    {
+      "name": "",
+      "Gender": "",
+      "id": 20
+    }
+  ]
+}
