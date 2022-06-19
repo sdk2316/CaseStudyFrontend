@@ -1,7 +1,7 @@
 export class AddFlight {
 
    
-		flightNumber :number | undefined;
+		flightNumber :number =0;
 		operatingAirlines : string="";
 		fromPlace :string="";
 		toPlace : string="";

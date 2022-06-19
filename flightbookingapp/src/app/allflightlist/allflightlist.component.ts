@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AddFlight } from '../add-flight';
 import { AddflightService } from '../addflight.service';
 
@@ -8,9 +9,10 @@ import { AddflightService } from '../addflight.service';
   styleUrls: ['./allflightlist.component.css']
 })
 export class AllflightlistComponent implements OnInit {
-  allflights:AddFlight[] | undefined;
+  allflights:AddFlight[] | undefined ;
+  
 
-  constructor(private addflightService:AddflightService) { }
+  constructor(private addflightService:AddflightService,private router:Router) { }
 
   ngOnInit(): void {
     this.getFlights();
@@ -23,5 +25,23 @@ export class AllflightlistComponent implements OnInit {
       this.allflights=data;
     })
   }
+
+  updateFlight(flightNumber:number){
+    this.router.navigate(['updateflight',flightNumber]);
+  }
+
+ deleteFlight(flightNumber:number){
+  this.addflightService.deleteFlight(flightNumber).subscribe(data=>{
+    console.log(data);
+    this.getFlights();
+  })
+
+ 
+  }
+  ViewFlightDetails(flightNumber:number){
+    this.router.navigate(['viewflightdetails',flightNumber]);
+  }
+
+  
 
 }

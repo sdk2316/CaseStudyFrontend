@@ -1,8 +1,13 @@
 a ,a:hover{
-    font-size: 40px;
-    background-color:yellowgreen;
+    font-size: 30px;
+    background-color:rgb(9, 10, 10);
   }
-
+  span {
+    color: rgb(247, 243, 243);
+}
+p,li{
+  font-size: 20px;
+}
 /* 
   p:hover, h1:hover, a:hover {
     background-color: yellow;

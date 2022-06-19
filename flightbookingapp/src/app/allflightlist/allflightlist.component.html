@@ -1,3 +1,7 @@
+<br>
+<button type="button" routerLink="/addflight"  class="btn btn-success">Add New Flight</button>&nbsp;&nbsp;&nbsp;
+<button type="button" routerLink="/home"  class="btn btn-success">Home</button>
+
 <h2 class="text-center">All Flights Information</h2>
 <table class="table table-dark">
     <thead>
@@ -14,6 +18,8 @@
         <th>Non-BusinessSeats</th>
         <th>Cost</th>
         <th>DateOfDeparture</th>
+       <th colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Action</th>
        
       </tr>
     </thead>
@@ -31,6 +37,9 @@
         <td>{{flight.nonBusinessSeats}}</td>
         <td>{{flight.cost | currency:'INR'}}</td>
         <td>{{flight.dateOfDeparture | date}}</td>
+        <td><button (click)="updateFlight(flight.flightNumber)" class="btn btn-success"> UpdateFlight</button></td>
+        <td> <button type="button"  (click)="deleteFlight(flight.flightNumber)" class="btn btn-danger">DeleteFlight</button></td>
+        <td> <button type="button"  (click)="ViewFlightDetails(flight.flightNumber)" class="btn btn-danger">ViewFlightDetails</button></td>
       </tr>
       
     </tbody>

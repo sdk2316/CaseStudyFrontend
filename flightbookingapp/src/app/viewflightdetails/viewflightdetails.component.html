@@ -1,0 +1,12 @@
+<h1>This is flight details of <b>{{ addFlight.operatingAirlines | uppercase}} </b></h1>
+<h2>Flight Number  : {{ addFlight.flightNumber}}</h2>
+
+<h2>From  : {{ addFlight.fromPlace }}</h2>
+<h2>To  : {{ addFlight.toPlace }}</h2>
+<h2>StartDate  : {{ addFlight.startDate | date}}</h2>
+<h2>EndDate  : {{ addFlight.endDate | date}}</h2>
+<h2>ScheduleDays  : {{ addFlight.scheduleDays }}</h2>
+<h2>BusinessSeats  : {{ addFlight.businessSeats }}</h2>
+<h2>NonBusinessSeats  : {{ addFlight.nonBusinessSeats}}</h2>
+<h2>Cost  : {{ addFlight.cost | currency:'INR'}}</h2>
+<h2>Date of Departure  : {{ addFlight.dateOfDeparture | date}}</h2>

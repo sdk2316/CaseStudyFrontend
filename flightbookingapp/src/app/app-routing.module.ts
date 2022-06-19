@@ -6,8 +6,10 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { UpdateflightComponent } from './updateflight/updateflight.component';
 import { UregistrationComponent } from './uregistration/uregistration.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
+import { ViewflightdetailsComponent } from './viewflightdetails/viewflightdetails.component';
 
 const routes: Routes = [
 
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'allflights', component: AllflightlistComponent},
   { path: 'addflight', component: AddflightComponent},
-  { path: 'userlogin', component: UserloginComponent}
+  { path: 'userlogin', component: UserloginComponent},
+  { path: 'updateflight/:flightNumber', component: UpdateflightComponent},
+  { path: 'viewflightdetails/:flightNumber', component: ViewflightdetailsComponent}
   
 
 ];

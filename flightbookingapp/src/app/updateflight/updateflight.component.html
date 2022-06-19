@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +11,19 @@
     <title>Add Flight</title>
 </head>
 <body>
+   
   <br>
-  <h1><button type="button" routerLink="/allflights" class="btn btn-success text-center"> See All Flights</button></h1><br>
-    <h2 class="text-center">Enter New Flight Information to create</h2>
+  <h1><button class="btn btn-success text-center"><a routerLink="/allflights" style="text-decoration: none;" > allflights</a></button></h1><br>
+    <h2 class="text-center">Update Flight Details Information</h2>
     <div class="col-md-8 offset-md-4">  
     
     <form (ngSubmit)="onSubmit()">
-      <p class="msg_success">{{ msg }}</p>
-        <div class="form-group ">
+     
+        <!-- <div class="form-group ">
             <label for="FlightNumber">Flight Number</label>
             <input type="number" class="form-control" id="FlightNumber" name="FlightNumber" [(ngModel)]="addFlight.flightNumber" aria-describedby="FlightNumber" placeholder="Enter new FlightNumber">
             
-          </div>
+          </div> -->
     
         <div class="form-group">
           <label for="AirlineName">Operating Airline Name</label>
