@@ -18,6 +18,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import { UpdateflightComponent } from './updateflight/updateflight.component';
 import { ViewflightdetailsComponent } from './viewflightdetails/viewflightdetails.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,8 @@ import { ViewflightdetailsComponent } from './viewflightdetails/viewflightdetail
     BrowserAnimationsModule,
     MatSliderModule,
     MatButtonModule,
+    MatIconModule
+    
     
   
   ],
