@@ -1,32 +1,44 @@
-<br>
-<button type="button" routerLink="/home"  class="btn btn-success"><img width="60" height="25" src="assets/images/home.png"/></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<button type="button" routerLink="/addflight"  class="btn btn-success">Add New Flight</button>
 
-<h2 class="text-center">All Flights Information</h2>
-<table class="table table-dark">
-    <thead>
-      <tr>
-       
-        <th>FlightNumber</th>
-        <th>OperatingAirlines</th>
-        <th>FromPlace</th>
-        <th>ToPlace</th>
-        <th>StartDate</th>
-        <th>EndDate</th>
-        <th>ScheduleDays</th>
-        <th>BusinessSeat</th>
-        <th>Non-BusinessSeats</th>
-        <th>Cost</th>
-        <th>DateOfDeparture</th>
-       <th colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          Action</th>
-       
-      </tr>
-    </thead>
-    <tbody>
+  <br>
+  <button type="button" routerLink="/home"  class="btn btn-success"><img width="60" height="25" src="assets/images/home.png"/></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  <button type="button" routerLink="/addflight"  class="btn btn-success"><span class="glyphicon glyphicon-plus"> </span>&nbsp;Add New Flight</button>
+  
+  <h2 class="text-center">All Flights Information</h2>
+  
+  <div class="container-fluid">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+         
+          <th>FlightNumber</th>
+          <th>OperatingAirlines</th>
+          <th>FromPlace</th>
+          <th>ToPlace</th>
+          <th>StartDate</th>
+          <th>EndDate</th>
+          <th>ScheduleDays</th>
+          <th>BusinessSeat</th>
+          <th>Non-BusinessSeats</th>
+          <th>Cost</th>
+          <th>DateOfDeparture</th>
+         <th colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Action</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+     
       <tr *ngFor="let flight of allflights">
-       
+         
         <td>{{flight.flightNumber}}</td>
         <td>{{flight.operatingAirlines}}</td>
         <td>{{flight.fromPlace }}</td>
@@ -38,10 +50,18 @@
         <td>{{flight.nonBusinessSeats}}</td>
         <td>{{flight.cost | currency:'INR'}}</td>
         <td>{{flight.dateOfDeparture | date}}</td>
-        <td><button (click)="updateFlight(flight.flightNumber)" class="btn btn-success"> UpdateFlight</button></td>
-        <td> <button type="button"  (click)="deleteFlight(flight.flightNumber)" class="btn btn-danger">DeleteFlight</button></td>
-        <td> <button type="button"  (click)="ViewFlightDetails(flight.flightNumber)" class="btn btn-danger">ViewFlightDetails</button></td>
+        <td><button (click)="updateFlight(flight.flightNumber)" class="btn btn-success"> <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Update Flight</button></td>
+        <td> <button type="button"  (click)="deleteFlight(flight.flightNumber)" class="btn btn-danger">  <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;&nbsp; Delete Flight</button></td>
+        <td> <button type="button"  (click)="ViewFlightDetails(flight.flightNumber)" class="btn btn-info"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;View Flight Details</button></td>
       </tr>
       
-    </tbody>
-  </table>
+  
+    
+      </tbody>
+    </table>
+
+  </div>
+  
+  
+
+</body>

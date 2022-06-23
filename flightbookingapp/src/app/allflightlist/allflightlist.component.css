@@ -7,3 +7,12 @@ td {
     margin-right: auto;
   }
 
+  table {
+    width: 50%;
+  }
+  
+  th {
+    height: 70px;
+  }
+
+  

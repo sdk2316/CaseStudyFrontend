@@ -19,6 +19,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { UpdateflightComponent } from './updateflight/updateflight.component';
 import { ViewflightdetailsComponent } from './viewflightdetails/viewflightdetails.component';
 import {MatIconModule} from '@angular/material/icon';
+import { FlightsearchComponent } from './flightsearch/flightsearch.component';
+import { FlightinformationComponent } from './flightinformation/flightinformation.component';
+import { BookflightComponent } from './bookflight/bookflight.component';
+import { TicketbookedComponent } from './ticketbooked/ticketbooked.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import {MatIconModule} from '@angular/material/icon';
     AddflightComponent,
     AllflightlistComponent,
     UpdateflightComponent,
-    ViewflightdetailsComponent
+    ViewflightdetailsComponent,
+    FlightsearchComponent,
+    FlightinformationComponent,
+    BookflightComponent,
+    TicketbookedComponent
   ],
   imports: [
     BrowserModule,

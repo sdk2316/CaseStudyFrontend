@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddflightComponent } from './addflight/addflight.component';
 import { AllflightlistComponent } from './allflightlist/allflightlist.component';
+import { BookflightComponent } from './bookflight/bookflight.component';
+import { FlightinformationComponent } from './flightinformation/flightinformation.component';
+import { FlightsearchComponent } from './flightsearch/flightsearch.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { TicketbookedComponent } from './ticketbooked/ticketbooked.component';
 import { UpdateflightComponent } from './updateflight/updateflight.component';
 import { UregistrationComponent } from './uregistration/uregistration.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
@@ -21,9 +25,14 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'allflights', component: AllflightlistComponent},
   { path: 'addflight', component: AddflightComponent},
-  { path: 'userlogin', component: UserloginComponent},
+  
   { path: 'updateflight/:flightNumber', component: UpdateflightComponent},
-  { path: 'viewflightdetails/:flightNumber', component: ViewflightdetailsComponent}
+  { path: 'viewflightdetails/:flightNumber', component: ViewflightdetailsComponent},
+  //user path bookflight ticketbooked
+  { path: 'flightsearch', component: FlightsearchComponent},
+  {path:'flightinformation',component:FlightinformationComponent},
+  {path:'bookflight',component:BookflightComponent},
+  {path:'ticketbooked',component:TicketbookedComponent}
   
 
 ];
