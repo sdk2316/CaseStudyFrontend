@@ -12,6 +12,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { TicketbookedComponent } from './ticketbooked/ticketbooked.component';
 import { UpdateflightComponent } from './updateflight/updateflight.component';
 import { UregistrationComponent } from './uregistration/uregistration.component';
+import { UserbookflightComponent } from './userbookflight/userbookflight.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { ViewflightdetailsComponent } from './viewflightdetails/viewflightdetails.component';
 
@@ -28,10 +29,11 @@ const routes: Routes = [
   
   { path: 'updateflight/:flightNumber', component: UpdateflightComponent},
   { path: 'viewflightdetails/:flightNumber', component: ViewflightdetailsComponent},
-  //user path bookflight ticketbooked
+  //user path bookflight ticketbooked userbookflight
   { path: 'flightsearch', component: FlightsearchComponent},
   {path:'flightinformation',component:FlightinformationComponent},
   {path:'bookflight',component:BookflightComponent},
+  {path:'userbookflight',component:UserbookflightComponent},
   {path:'ticketbooked',component:TicketbookedComponent}
   
 
