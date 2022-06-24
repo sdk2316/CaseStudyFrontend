@@ -1,7 +1,7 @@
 <h1>Search flights
 </h1><p>Fly anywhere. Fly everywhere.</p>
 
-    
+
   
       
 <body>
@@ -13,26 +13,78 @@
     
         <div class="form-group">
            <b>from Place</b>
-            <input type="text" class="form-control" id="fromPlace"  name="fromPlace"  aria-describedby="fromPlace" placeholder="Enter fromPlace">
+            <input type="text" class="form-control" id="fromPlace"  [(ngModel)]="fromPlace" name="fromPlace"  aria-describedby="fromPlace" placeholder="Enter fromPlace">
           </div>
     
           <div class="form-group">
            <b>to Place</b>
-            <input type="text" class="form-control" id="toPlace" name="toPlace"  aria-describedby="toPlace" placeholder="Enter toPlace">
+            <input type="text" class="form-control" id="toPlace" [(ngModel)]="toPlace" name="toPlace"  aria-describedby="toPlace" placeholder="Enter toPlace">
           </div>
     
           <div class="form-group">
            <b>Start Date</b>
-            <input type="Date" class="form-control" name="date" id="startDate"  aria-describedby="startDate" placeholder="Enter startDate">
+            <input type="Date" class="form-control" name="date" [(ngModel)]="startDate" id="startDate"  aria-describedby="startDate" placeholder="Enter startDate">
           </div>
     
           <br>
-
-         <div> <button mat-stroked-button color="primary" routerLink="/flightinformation">Search</button></div>
+          <!-- routerLink="/flightinformation" -->
+         <div> <button class="btn btn-outline-warning" (click)="getAllSearch(fromPlace,toPlace,startDate)">Search</button></div>
      
     </form>
      
-       
+   
+
+  <hr>
+  <h2 >{{sms}}</h2>
+      <div class="container-fluid">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+<!--              
+              <th>FlightNumber</th>
+              <th>OperatingAirlines</th>
+              <th>FromPlace</th>
+              <th>ToPlace</th>
+              <th>StartDate</th>
+              <th>EndDate</th>
+              <th>ScheduleDays</th>
+             
+              <th>Cost</th>
+              <th>DateOfDeparture</th>
+              <th>Action</th> -->
+           
+             
+            </tr>
+          </thead>
+          <tbody>
+          
+        
+          <tr *ngFor="let flight of allflights">
+          
+            <td> <b>FlightNumber  </b><br>{{flight.flightNumber}}</td>
+            <td><b>OperatingAirlines</b><br>{{flight.operatingAirlines}}</td>
+            <td><b>FromPlace</b><br>{{flight.fromPlace }}</td>
+            <td><b>ToPlace</b><br>{{flight.toPlace }}</td>
+            <td><b>StartDate</b><br>{{flight.startDate | date}}</td>
+            <td><b>EndDate</b><br>{{flight.endDate | date}}</td>
+            <td><b>ScheduleDays</b><br>{{flight.scheduleDays }}</td>
+            
+            <td><b>Cost</b><br>{{flight.cost | currency:'INR'}}</td>
+            <td><b>DateOfDeparture</b><br>{{flight.dateOfDeparture | date}}</td>
+            <td><b>Action</b><br><button class="btn btn-primary" routerLink="/bookflight">Book</button></td>
+           
+          </tr>
+          
+      
+        
+          </tbody>
+        </table>
+    
+      </div>
+    
+    <div> </div>
+    
+    
    
 
     <h1><b>Popular destinations</b></h1>
@@ -75,9 +127,9 @@
   <div class="col-md-4">
     <div class="thumbnail">
      
-        <img src="assets/images/Jaipur.PNG" alt="Fjords" style="width:100%"/>
+        <img src="assets/images/landmarks.jpg" alt="Fjords" height="430" style="width:100%"/>
         <div class="caption">
-          <p>Jaipur</p>
+          <p>London</p>
         </div>
     
     </div>

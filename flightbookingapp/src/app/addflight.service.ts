@@ -9,7 +9,17 @@ import { AddFlight } from './add-flight';
 export class AddflightService {
   private basrURL="http://localhost:9094/allFlights";
 
+  private ubaseURL="http://localhost:9090/user/api/v1.0"
+
   constructor(private httpClient:HttpClient) { }
+
+// user end point
+searchFlight(fromPlace:string,toPlace:string,startDate:any):Observable<AddFlight[]>{
+  return this.httpClient.get<AddFlight[]>("http://localhost:9090/user/api/v1.0/"+"search/"+fromPlace+"/"+toPlace+"/"+startDate);
+}
+
+// above all user end point
+//GET /user/api/v1.0/search/{fromPlace}/{toPlace}/{startDate}
 
   getAllFlightsList():Observable<AddFlight[]>{
     return this.httpClient.get<AddFlight[]>(`${this.basrURL}`);
