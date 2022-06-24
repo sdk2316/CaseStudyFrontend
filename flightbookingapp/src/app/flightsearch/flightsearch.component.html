@@ -6,29 +6,45 @@
       
 <body>
    
-    <form (ngSubmit)="onSubmit()">
+    <form  (ngSubmit)="onSubmit()">
      
         
-
+      <!-- From Place Start-->
     
         <div class="form-group">
-           <b>from Place</b>
-            <input type="text" class="form-control" id="fromPlace"  [(ngModel)]="fromPlace" name="fromPlace"  aria-describedby="fromPlace" placeholder="Enter fromPlace">
+           <b>From Place</b>
+            <input type="text" class="form-control"      id="fromPlace"  [(ngModel)]="fromPlace" name="fromPlace"  aria-describedby="fromPlace" placeholder="Enter fromPlace">
           </div>
+
+         
+        <!-- From Place Closed-->
     
+
+         <!-- To Place Start-->
           <div class="form-group">
            <b>to Place</b>
-            <input type="text" class="form-control" id="toPlace" [(ngModel)]="toPlace" name="toPlace"  aria-describedby="toPlace" placeholder="Enter toPlace">
+            <input type="text" class="form-control"  id="toPlace" [(ngModel)]="toPlace" name="toPlace"  aria-describedby="toPlace" placeholder="Enter toPlace">
+
           </div>
-    
+          
+         
+ <!-- To Place Closed-->
+
+ <!-- startDatestart-->
+
           <div class="form-group">
            <b>Start Date</b>
-            <input type="Date" class="form-control" name="date" [(ngModel)]="startDate" id="startDate"  aria-describedby="startDate" placeholder="Enter startDate">
+            <input type="Date" class="form-control"  name="date" [(ngModel)]="startDate" id="startDate"  aria-describedby="startDate" placeholder="Enter startDate">
           </div>
+         
+
+          <!-- startDate Closed-->
     
           <br>
-          <!-- routerLink="/flightinformation" -->
-         <div> <button class="btn btn-outline-warning" (click)="getAllSearch(fromPlace,toPlace,startDate)">Search</button></div>
+       
+
+          <!-- (click)="getAllSearch(fromPlace,toPlace,startDate)" -->
+         <div> <button class="btn btn-outline-warning" >Search</button></div>
      
     </form>
      

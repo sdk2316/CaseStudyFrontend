@@ -18,6 +18,10 @@ searchFlight(fromPlace:string,toPlace:string,startDate:any):Observable<AddFlight
   return this.httpClient.get<AddFlight[]>("http://localhost:9090/user/api/v1.0/"+"search/"+fromPlace+"/"+toPlace+"/"+startDate);
 }
 
+bookFlight(bookflight:Object):Observable<Object>{
+  return this.httpClient.post(`http://localhost:9090/user/api/v1.0/bookFlight`,bookflight)
+}
+
 // above all user end point
 //GET /user/api/v1.0/search/{fromPlace}/{toPlace}/{startDate}
 

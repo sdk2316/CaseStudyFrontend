@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AddflightService } from '../addflight.service';
+import { Bookflight } from '../bookflight';
 
 @Component({
   selector: 'app-bookflight',
@@ -7,9 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookflightComponent implements OnInit {
 
-  constructor() { }
+  //addFlight:AddFlight=new AddFlight(); //data coming from form and storing in var addFlight
+
+  Bookflight:Bookflight=new Bookflight();
+
+  constructor(private addflightService:AddflightService,private router:Router) { }
+  msg: string = '';
 
   ngOnInit(): void {
+  }
+
+  bookFlight(){
+    //passing form data to service fun
+    this.addflightService.bookFlight(this.Bookflight).subscribe(data=>{
+     
+     
+     
+      console.log(data);
+      var b = JSON.parse(JSON.stringify(data)); 
+    },
+    error=>console.log(error));
+  }
+
+  onSubmit(){
+    this.router.navigate(['ticketbooked'])
+    this.bookFlight()
+    
   }
 
 }
