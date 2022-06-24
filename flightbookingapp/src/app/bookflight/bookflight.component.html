@@ -1,56 +1,57 @@
 <h1>Fill Your Details </h1>
 
-
-<form>
+{{msg}}
+<form  (ngSubmit)="onSubmit()">
      
         
 
     
     <div class="form-group">
        <b>Enter First Name</b>
-        <input type="text" class="form-control"   name="FirstName"   placeholder="Enter First Name">
+        <input type="text" class="form-control"   name="FirstName"  [(ngModel)]="Bookflight.userFirstName"  placeholder="Enter First Name">
       </div>
 
       <div class="form-group">
         <b>Enter Last Name</b>
-         <input type="text" class="form-control"   name="LastName"   placeholder="Enter Last Name">
+         <input type="text" class="form-control"   name="LastName"  [(ngModel)]="Bookflight.userLastName" placeholder="Enter Last Name">
        </div>
 
        <div class="form-group">
         <b>Enter Email</b>
-         <input type="email" class="form-control"   name="email"   placeholder="Enter Last Email">
+         <input type="email" class="form-control"   name="email"  [(ngModel)]="Bookflight.email" placeholder="Enter Last Email">
        </div>
        <br>
        <b>Gender </b>
        <div class="form-check">
-       Male &nbsp;  &nbsp;  &nbsp;<input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1"><br>
-       Female<input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1">
+       Male &nbsp;  &nbsp;  &nbsp;<input class="form-check-input" type="radio" value='Male' [(ngModel)]="Bookflight.gender" name="gender" id="m"><br>
+       Female<input class="form-check-input" type="radio" name="gender" value='Female' [(ngModel)]="Bookflight.gender" id="f">
        
       </div>
 
       <div class="form-group">
         <b>Enter age</b>
-         <input type="number" class="form-control"   name="age"   placeholder="Enter age">
+         <input type="number" class="form-control"   name="age"  [(ngModel)]="Bookflight.age" placeholder="Enter age">
        </div>
 
        <div class="form-group">
         <b>Enter seat</b>
-         <input type="number" class="form-control"   name="seat"   placeholder="Enter seat">
+         <input type="number" class="form-control"  [(ngModel)]="Bookflight.seat" name="seat"   placeholder="Enter seat">
        </div>
 
        <div class="form-group">
         <b>Enter meal</b>
-         <input type="text" class="form-control"   name="meal"   placeholder="Enter meal">
+         <input type="text" class="form-control"   [(ngModel)]="Bookflight.meal" name="meal"   placeholder="Enter meal">
        </div>
 
        
        <div class="form-group">
         <b>Enter your city name</b>
-         <input type="text" class="form-control"   name="city"   placeholder="Enter your city name">
+         <input type="text" class="form-control" [(ngModel)]="Bookflight.address"   name="city"   placeholder="Enter your city name">
        </div>
 
       <br>
 
-     <div> <button class="btn btn-outline-success" routerLink="/ticketbooked">Submit</button></div>
+      <!-- routerLink="/ticketbooked" -->
+     <div> <button class="btn btn-outline-success" >Submit</button></div>
  
 </form>
