@@ -34,8 +34,9 @@ export class BookflightComponent implements OnInit {
   }
 
   onSubmit(){
-    this.router.navigate(['ticketbooked'])
     this.bookFlight()
+    this.router.navigate(['ticketbooked'])
+   
     
   }
 
