@@ -39,7 +39,12 @@ export class FlightsearchComponent implements OnInit {
   console.log(data)
   this.allflights=data;
   
+  
  // this.router.navigate(['/flightinformation'])
+},
+error=>{
+  this.sms="flight not found"
+    
 })
   }
 

@@ -10,8 +10,7 @@ import { Bookflight } from '../bookflight';
   styleUrls: ['./bookflight.component.css']
 })
 export class BookflightComponent implements OnInit {
-
-  //addFlight:AddFlight=new AddFlight(); //data coming from form and storing in var addFlight
+ //data coming from form and storing in var Bookflight
 
   Bookflight:Bookflight=new Bookflight();
 
