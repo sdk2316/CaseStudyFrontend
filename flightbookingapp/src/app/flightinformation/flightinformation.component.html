@@ -1,4 +1,4 @@
-<p>flightinformation works!</p>
+<h1>Search Your Booked Flight Here.....</h1>
 
 <form>
      
@@ -39,33 +39,22 @@
  
 </form>
 
-<h2 class="text-center">All Flights Information</h2>
+<hr>
   
-  <div class="container-fluid">
+  <div class="container-fluid " >
     <table class="table table-dark">
-      <thead>
-        <tr>
-          <th>PNR</th>
-          <th>FirstNamer</th>
-          <th>LastNames</th>
-          <th>Email</th>
-          <th>Age</th>
-          <th>Gender</th>
-          <th>Address</th>
-        
-        </tr>
-      </thead>
+      
       <tbody>
      
       <tr *ngFor="let flight of Bookflight">
          
-        <td>PNR {{flight.pnr}}</td>
-        <td>{{flight.userFirstName}}</td>
-        <td>{{flight.userLastName }}</td>
-        <td>{{flight.email }}</td>
-        <td>{{flight.age}}</td>
-        <td>{{flight.gender}}</td>
-        <td>{{flight.address }}</td>
+        <td><h1>PNR</h1> {{flight.pnr}}</td>
+        <td><h1>FirstNamer</h1>{{flight.userFirstName}}</td>
+        <td><h1>LastNames</h1>{{flight.userLastName }}</td>
+        <td><h1>Email</h1>{{flight.email }}</td>
+        <td><h1>Age</h1>{{flight.age}}</td>
+        <td><h1>Gender</h1>{{flight.gender}}</td>
+        <td><h1>Address</h1>{{flight.address }}</td>
      
       </tr>
    

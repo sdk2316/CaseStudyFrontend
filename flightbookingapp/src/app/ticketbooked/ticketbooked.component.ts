@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AddflightService } from '../addflight.service';
 import { Bookflight } from '../bookflight';
 
 @Component({
@@ -8,11 +10,19 @@ import { Bookflight } from '../bookflight';
 })
 export class TicketbookedComponent implements OnInit {
 
-  ticketbooked:Bookflight=new Bookflight();
+  Bookflight: Bookflight[] = []
 
-  constructor() { }
+  constructor(private addflightService:AddflightService,private router:Router) { }
 
   ngOnInit(): void {
+
+    this.getAllBookedFlights()
+  }
+
+  public getAllBookedFlights() {
+    this.addflightService.getAllBookedFlights().subscribe(data => {
+      this.Bookflight = data;
+    })
   }
 
 }

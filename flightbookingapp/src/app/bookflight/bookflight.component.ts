@@ -24,8 +24,9 @@ export class BookflightComponent implements OnInit {
   bookFlight(){
     //passing form data to service fun
     this.addflightService.bookFlight(this.Bookflight).subscribe(data=>{
+      console.log(data);
       this.msg=data;
-    console.log(data);
+     
   
 
       //var b = JSON.parse(JSON.stringify(data)); 

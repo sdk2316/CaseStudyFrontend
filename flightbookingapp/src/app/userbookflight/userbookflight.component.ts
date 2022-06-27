@@ -31,8 +31,8 @@ export class UserbookflightComponent implements OnInit {
 
   }
 
-  deleteFlight(id:number){
-    this.addflightService.deleteBookedFlight(id).subscribe(data=>{
+  deleteFlight(pnr:number){
+    this.addflightService.deleteBookedFlight(pnr).subscribe(data=>{
       
      this.smg=data
      console.log(data)

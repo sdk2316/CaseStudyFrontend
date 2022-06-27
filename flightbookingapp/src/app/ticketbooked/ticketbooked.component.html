@@ -1,2 +1,35 @@
-<h1>your ticketbooked succesfully </h1>
-<b routerLink="/flightsearch"> click here to go home page</b>
+<h1>Your  booked ticket record </h1>
+<button class="btn btn-success" routerLink="/flightsearch"> Home</button>
+<br>
+<br>
+
+<div class="container-fluid " >
+    <table class="table table-dark">
+       <thead><tr>
+      <th>PNR</th>
+      <th>FirstNamer</th>
+      <th>LastNames</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Address</th>
+    </tr>
+    </thead>
+      <tbody>
+     
+      <tr *ngFor="let flight of Bookflight">
+         
+        <td> {{flight.pnr}}</td>
+        <td>{{flight.userFirstName}}</td>
+        <td>{{flight.userLastName }}</td>
+        <td>{{flight.email }}</td>
+        <td>{{flight.age}}</td>
+        <td>{{flight.gender}}</td>
+        <td>{{flight.address }}</td>
+     
+      </tr>
+   
+      </tbody>
+    </table>
+  </div>
+

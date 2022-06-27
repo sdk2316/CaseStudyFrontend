@@ -19,18 +19,19 @@ searchFlight(fromPlace:string,toPlace:string,startDate:any):Observable<AddFlight
   return this.httpClient.get<AddFlight[]>("http://localhost:9090/user/api/v1.0/"+"search/"+fromPlace+"/"+toPlace+"/"+startDate);
 }
 
-bookFlight(bookflight:Object):Observable<Object>{
+bookFlight(bookflight:Bookflight):Observable<Object>{
   return this.httpClient.post(`http://localhost:9090/user/api/v1.0/bookFlight`,bookflight,{
     responseType:'text'
   })
 }
 
+
 getAllBookedFlights():Observable<Bookflight[]>{
   return this.httpClient.get<Bookflight[]>('http://localhost:9090/user/api/v1.0/getAllBookFlight')
 }
 
-deleteBookedFlight(id:number):Observable<Object>{
-  return this.httpClient.delete(`http://localhost:9090/user/api/v1.0/getCancelByPnr//${id}`,{
+deleteBookedFlight(pnr:number):Observable<Object>{
+  return this.httpClient.delete(`http://localhost:9090/user/api/v1.0/getCancelByPnr/${pnr}`,{
     responseType:'text'
   });
 }
