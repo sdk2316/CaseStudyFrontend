@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AddFlight } from './add-flight';
+import { Bookflight } from './bookflight';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,30 @@ searchFlight(fromPlace:string,toPlace:string,startDate:any):Observable<AddFlight
 }
 
 bookFlight(bookflight:Object):Observable<Object>{
-  return this.httpClient.post(`http://localhost:9090/user/api/v1.0/bookFlight`,bookflight)
+  return this.httpClient.post(`http://localhost:9090/user/api/v1.0/bookFlight`,bookflight,{
+    responseType:'text'
+  })
+}
+
+getAllBookedFlights():Observable<Bookflight[]>{
+  return this.httpClient.get<Bookflight[]>('http://localhost:9090/user/api/v1.0/getAllBookFlight')
+}
+
+deleteBookedFlight(id:number):Observable<Object>{
+  return this.httpClient.delete(`http://localhost:9090/user/api/v1.0/getCancelByPnr//${id}`,{
+    responseType:'text'
+  });
+}
+
+
+
+getBookFlightByEmail(email:string):Observable<Bookflight[]>{
+  return this.httpClient.get<Bookflight[]>(`http://localhost:9090/user/api/v1.0/getFlightByEmailId/${email}`
+);
+}
+
+getBookFlightPnr(pnr:number):Observable<Bookflight[]>{
+  return this.httpClient.get<Bookflight[]>(`http://localhost:9090/user/api/v1.0/getFlightByPnr/${pnr}`);
 }
 
 // above all user end point
@@ -32,7 +56,8 @@ bookFlight(bookflight:Object):Observable<Object>{
   // for postmapping
   addFlight( addFlight:AddFlight):Observable<Object>{
    // return this.httpClient.post(`${this.basrURL}`,addFlight)
-    return this.httpClient.post(`http://localhost:9094/addFlight`,addFlight)
+    return this.httpClient.post(`http://localhost:9094/addFlight`,addFlight
+    )
 
   }
 

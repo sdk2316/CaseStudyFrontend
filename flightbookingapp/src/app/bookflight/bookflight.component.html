@@ -1,6 +1,8 @@
 <h1>Fill Your Details </h1>
 
-{{msg}}
+<h1>{{msg}}</h1>
+
+<h1 routerLink="/userbookflight">{{managebooked}}</h1>
 <form  (ngSubmit)="onSubmit()">
      
         
@@ -52,6 +54,7 @@
       <br>
 
       <!-- routerLink="/ticketbooked" -->
-     <div> <button class="btn btn-outline-success" >Submit</button></div>
+     <div> <button class="btn btn-outline-success" >Submit</button> &nbsp;&nbsp;  <button type="reset" class="btn btn-outline-success" >Reset</button></div>
+     <div> </div>
  
 </form>

@@ -41,12 +41,12 @@
     
           <div class="form-group">
             <label for="startDate">Start Date</label>
-            <input type="Date" class="form-control" name="date" id="startDate" [(ngModel)]="addFlight.startDate" aria-describedby="startDate" placeholder="Enter startDate">
+            <input type="date" class="form-control datepicker" name="date" id="date" [(ngModel)]="addFlight.startDate" aria-describedby="startDate" placeholder="Enter startDate">
           </div>
     
           <div class="form-group">
             <label for="endDate">End  Date</label>
-            <input type="date" class="form-control" name="date" id="endDate" [(ngModel)]="addFlight.endDate" aria-describedby="endDate" placeholder="Enter endDate">
+            <input type="date" class="form-control datepicker" name="date" id="date" [(ngModel)]="addFlight.endDate" aria-describedby="endDate" placeholder="Enter endDate">
           </div>
     
         <div class="form-group">
@@ -72,11 +72,11 @@
         
           <div class="form-group">
             <label for="dateOfDeparture"> Date of Departure</label>
-            <input type="date" class="form-control" name="dateOfDeparture" id="dateOfDeparture" [(ngModel)]="addFlight.dateOfDeparture" aria-describedby="dateOfDeparture" placeholder="Enter date Of Departure">
+            <input type="date" class="form-control datepicker" name="dateOfDeparture" id="dateOfDeparture" [(ngModel)]="addFlight.dateOfDeparture" aria-describedby="dateOfDeparture" placeholder="Enter date Of Departure">
           </div>
           <br>
 
-          <button mat-stroked-button color="primary">Add New Flight</button>
+          <button class="btn btn-success">Add New Flight</button>
      
         
       </form>

@@ -1,5 +1,7 @@
 export class Bookflight {
 
+    id:number =0;
+    pnr:number =0;
     userFirstName: string = ""
 
     userLastName: string = ""

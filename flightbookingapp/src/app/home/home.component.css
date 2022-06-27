@@ -8,8 +8,7 @@ a ,a:hover{
 p,li{
   font-size: 20px;
 }
-/* 
-  p:hover, h1:hover, a:hover {
-    background-color: yellow;
-  }
-   */
+body, html {
+  height: 100%;
+  margin: 0;
+}

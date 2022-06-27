@@ -15,7 +15,8 @@ export class BookflightComponent implements OnInit {
   Bookflight:Bookflight=new Bookflight();
 
   constructor(private addflightService:AddflightService,private router:Router) { }
-  msg: string = '';
+  msg:any=""
+  managebooked:string=""
 
   ngOnInit(): void {
   }
@@ -23,18 +24,22 @@ export class BookflightComponent implements OnInit {
   bookFlight(){
     //passing form data to service fun
     this.addflightService.bookFlight(this.Bookflight).subscribe(data=>{
-     
-     
-     
-      console.log(data);
-      var b = JSON.parse(JSON.stringify(data)); 
+      this.msg=data;
+    console.log(data);
+  
+
+      //var b = JSON.parse(JSON.stringify(data)); 
     },
-    error=>console.log(error));
+    error=> this.msg='Please fill the form correctly'
+   
+    );
   }
 
   onSubmit(){
     this.bookFlight()
-    this.router.navigate(['ticketbooked'])
+    this.managebooked=" Click Here to see your ticket"
+   // this.router.navigate(['ticketbooked'])
+  
    
     
   }

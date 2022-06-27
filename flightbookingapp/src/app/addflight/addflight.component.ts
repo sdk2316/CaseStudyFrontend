@@ -30,6 +30,7 @@ export class AddflightComponent implements OnInit {
     console.log(this.addFlight)
     this.saveFlight();
     this.msg = 'New Flight Added Successfully';
+    
   }
   
 }
