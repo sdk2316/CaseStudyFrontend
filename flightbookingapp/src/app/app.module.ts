@@ -24,6 +24,7 @@ import { FlightinformationComponent } from './flightinformation/flightinformatio
 import { BookflightComponent } from './bookflight/bookflight.component';
 import { TicketbookedComponent } from './ticketbooked/ticketbooked.component';
 import { UserbookflightComponent } from './userbookflight/userbookflight.component';
+import { AdminregistrationComponent } from './adminregistration/adminregistration.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { UserbookflightComponent } from './userbookflight/userbookflight.compone
     FlightinformationComponent,
     BookflightComponent,
     TicketbookedComponent,
-    UserbookflightComponent
+    UserbookflightComponent,
+    AdminregistrationComponent
   ],
   imports: [
     BrowserModule,

@@ -3,58 +3,92 @@
 <h1>{{msg}}</h1>
 
 <h1 routerLink="/userbookflight">{{managebooked}}</h1>
-<form  (ngSubmit)="onSubmit()">
+<form  (ngSubmit)="onSubmit()"  #bookFlightForm="ngForm">
      
         
 
     
     <div class="form-group">
        <b>Enter First Name</b>
-        <input type="text" class="form-control"   name="FirstName"  [(ngModel)]="Bookflight.userFirstName"  placeholder="Enter First Name">
+        <input type="text" class="form-control"  #FirstName="ngModel" name="FirstName"  
+        [(ngModel)]="Bookflight.userFirstName"  placeholder="Enter First Name" required pattern="[A-Za-z]{3,20}">
+      </div>
+
+      <div class="text-danger" *ngIf="FirstName.invalid && (FirstName.dirty || FirstName.touched)">
+        <span *ngIf="FirstName.errors?.['required']">Please enter your name</span>
+        <span *ngIf="FirstName.errors?.['pattern']"> Name must be contain characters <br>only min 3 characters and max 20 characters</span>
       </div>
 
       <div class="form-group">
         <b>Enter Last Name</b>
-         <input type="text" class="form-control"   name="LastName"  [(ngModel)]="Bookflight.userLastName" placeholder="Enter Last Name">
+         <input type="text" class="form-control" #LastName="ngModel" name="LastName" 
+          [(ngModel)]="Bookflight.userLastName" placeholder="Enter Last Name" required pattern="[A-Za-z]{3,10}">
        </div>
+       
+      <div class="text-danger" *ngIf="LastName.invalid &&( LastName.dirty || LastName.touched)">
+        <span *ngIf="LastName.errors?.['required']">Please enter your LastName</span>
+        <span *ngIf="LastName.errors?.['pattern']"> LastName must be contain characters <br>only min 3 characters and max 10 characters</span>
+      </div>
+
 
        <div class="form-group">
         <b>Enter Email</b>
-         <input type="email" class="form-control"   name="email"  [(ngModel)]="Bookflight.email" placeholder="Enter Last Email">
+         <input type="email" class="form-control" #email="ngModel"  name="email"  
+         [(ngModel)]="Bookflight.email" placeholder="Enter Last Email" required pattern="[a-z0-9.]+@[a-z0-9.]+\.[a-z]{2,4}$">
        </div>
+       <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <span *ngIf="email.errors?.['required']">Email must be fill</span>
+        <span *ngIf="email.errors?.['pattern']"> Must contain email like Durgesh@gmail.com</span>
+      </div>
        <br>
        <b>Gender </b>
        <div class="form-check">
-       Male &nbsp;  &nbsp;  &nbsp;<input class="form-check-input" type="radio" value='Male' [(ngModel)]="Bookflight.gender" name="gender" id="m"><br>
-       Female<input class="form-check-input" type="radio" name="gender" value='Female' [(ngModel)]="Bookflight.gender" id="f">
+       Male &nbsp;  &nbsp;  &nbsp;<input class="form-check-input" required type="radio" value='Male' [(ngModel)]="Bookflight.gender" name="gender" id="m"><br>
+       Female<input class="form-check-input" type="radio" required name="gender" value='Female' [(ngModel)]="Bookflight.gender" id="f">
        
       </div>
 
       <div class="form-group">
         <b>Enter age</b>
-         <input type="number" class="form-control"   name="age"  [(ngModel)]="Bookflight.age" placeholder="Enter age">
+         <input type="number" class="form-control" #age="ngModel" required pattern="[0-9]{1,3}" name="age"  [(ngModel)]="Bookflight.age" placeholder="Enter age">
        </div>
+       <div class="text-danger" *ngIf="age.invalid && (age.dirty || age.touched)">
+        <span *ngIf="age.errors?.['required']">Enter age please</span>
+        <span *ngIf="age.errors?.['pattern']">Age must contain number</span>
+      </div>
 
        <div class="form-group">
         <b>Enter seat</b>
-         <input type="number" class="form-control"  [(ngModel)]="Bookflight.seat" name="seat"   placeholder="Enter seat">
+         <input type="number" class="form-control" #seat="ngModel" required pattern="[0-9]{1,3}" [(ngModel)]="Bookflight.seat" name="seat"   placeholder="Enter seat">
        </div>
+       <div class="text-danger" *ngIf="seat.invalid && (seat.dirty || seat.touched)">
+        <span *ngIf="seat.errors?.['required']">Enter seat please</span>
+        <span *ngIf="seat.errors?.['pattern']">seat must contain number</span>
+      </div>
 
        <div class="form-group">
         <b>Enter meal</b>
-         <input type="text" class="form-control"   [(ngModel)]="Bookflight.meal" name="meal"   placeholder="Enter meal">
+         <input type="text" class="form-control" #meal="ngModel" required pattern="[A-Za-z]{3,10}"  [(ngModel)]="Bookflight.meal" name="meal"   placeholder="Enter meal">
        </div>
+       <div class="text-danger" *ngIf="meal.invalid && (meal.dirty ||meal.touched)">
+        <span *ngIf="meal.errors?.['required']">Enter meal please</span>
+        <span *ngIf="meal.errors?.['pattern']">meal must contain characters</span>
+      </div>
 
        
        <div class="form-group">
         <b>Enter your city name</b>
-         <input type="text" class="form-control" [(ngModel)]="Bookflight.address"   name="city"   placeholder="Enter your city name">
+         <input type="text" class="form-control" #city="ngModel" required pattern="[A-Za-z]{3,10}" [(ngModel)]="Bookflight.address"   name="city"   placeholder="Enter your city name">
        </div>
+       <div class="text-danger" *ngIf="city.invalid && (city.dirty ||city.touched)">
+        <span *ngIf="city.errors?.['required']">Enter city please</span>
+        <span *ngIf="city.errors?.['pattern']">city must contain characters</span>
+      </div>
 
       <br>
 
       <!-- routerLink="/ticketbooked" -->
-     <div> <button class="btn btn-outline-success" >Submit</button> &nbsp;&nbsp;  <button type="reset" class="btn btn-outline-success" >Reset</button></div>
+     <div> <button class="btn btn-outline-success"  [disabled]="bookFlightForm.form.invalid">Submit</button> &nbsp;&nbsp;  <button type="reset" class="btn btn-outline-success" >Reset</button></div>
      <div> </div>
  
 </form>

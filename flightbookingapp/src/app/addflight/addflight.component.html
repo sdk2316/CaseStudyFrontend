@@ -14,29 +14,52 @@
   <h1><button type="button" routerLink="/allflights" class="btn btn-success text-center"> See All Flights</button></h1><br>
     <h2 class="text-center">Enter New Flight Information to create</h2>
     <div class="col-md-8 offset-md-4">  
-    
-    <form (ngSubmit)="onSubmit()">
       <p class="msg_success">{{ msg }}</p>
+    <form (ngSubmit)="onSubmit()" #add="ngForm">
+     
         <div class="form-group ">
             <label for="FlightNumber">Flight Number</label>
-            <input type="number" class="form-control" id="FlightNumber" name="FlightNumber" [(ngModel)]="addFlight.flightNumber" aria-describedby="FlightNumber" placeholder="Enter new FlightNumber">
+            <input type="number" class="form-control" id="FlightNumber" #FlightNumber="ngModel" name="FlightNumber" [(ngModel)]="addFlight.flightNumber"  placeholder="Enter new FlightNumber" 
+            required pattern="[0-9]{4,6}">
+            <div class="text-danger" *ngIf="FlightNumber.invalid && (FlightNumber.dirty || FlightNumber.touched)">
+              <span *ngIf="FlightNumber.errors?.['required']"> FlightNumber must be fill</span>
+              <span *ngIf="FlightNumber.errors?.['pattern']"> FlightNumber must be 4 to 6 digit</span>
+            </div>
             
           </div>
     
         <div class="form-group">
           <label for="AirlineName">Operating Airline Name</label>
-          <input type="text" class="form-control" id="AirlineName" name="AirlineName" [(ngModel)]="addFlight.operatingAirlines" aria-describedby="AirlineName" placeholder="Enter AirlineName">
+          <input type="text" class="form-control" id="AirlineName" #AirlineName="ngModel" 
+           name="AirlineName" [(ngModel)]="addFlight.operatingAirlines" placeholder="Enter AirlineName"
+           
+           required pattern="[A-Za-z0-9]{6,15}">
      
+        </div>
+        <div class="text-danger" *ngIf="AirlineName.invalid && (AirlineName.dirty || AirlineName.touched)">
+          <span *ngIf="AirlineName.errors?.['required']"> AirlineName must be fill</span>
+          <span *ngIf="AirlineName.errors?.['pattern']"> AirlineName must be 6 to 15 characters</span>
         </div>
     
         <div class="form-group">
             <label for="fromPlace">from Place</label>
-            <input type="text" class="form-control" id="fromPlace"  name="fromPlace" [(ngModel)]="addFlight.fromPlace" aria-describedby="fromPlace" placeholder="Enter fromPlace">
+            <input type="text" class="form-control" id="fromPlace" #fromPlace="ngModel" 
+             name="fromPlace" [(ngModel)]="addFlight.fromPlace"  placeholder="Enter fromPlace like MUM"
+             required pattern="[A-Za-z]{3,10}">
+          </div>
+          <div class="text-danger" *ngIf="fromPlace.invalid && (fromPlace.dirty || fromPlace.touched)">
+            <span *ngIf="fromPlace.errors?.['required']">fromPlace must be fill</span>
+            <span *ngIf="fromPlace.errors?.['pattern']"> fromPlace must be contain characters only</span>
           </div>
     
           <div class="form-group">
             <label for="toPlace">to Place</label>
-            <input type="text" class="form-control" id="toPlace" name="toPlace" [(ngModel)]="addFlight.toPlace" aria-describedby="toPlace" placeholder="Enter toPlace">
+            <input type="text" class="form-control" id="toPlace" #toPlace="ngModel" name="toPlace" 
+            [(ngModel)]="addFlight.toPlace"  placeholder="Enter toPlace like DEL" required pattern="[A-Za-z]{3,10}">
+          </div>
+          <div class="text-danger" *ngIf="toPlace.invalid && (toPlace.dirty || toPlace.touched)">
+            <span *ngIf="toPlace.errors?.['required']">toPlace must be fill</span>
+            <span *ngIf="toPlace.errors?.['pattern']"> toPlace must be contain characters only</span>
           </div>
     
           <div class="form-group">
@@ -76,7 +99,7 @@
           </div>
           <br>
 
-          <button class="btn btn-success">Add New Flight</button>
+          <button class="btn btn-success" [disabled]="add.form.invalid">Add New Flight</button>
      
         
       </form>
@@ -84,11 +107,4 @@
     </div > 
 </body>
  
-<script type="text/javascript">
-       
-    $('.datepicker').datepicker({ 
-        startDate: new Date()
-    });
-  
-</script>
 </html>

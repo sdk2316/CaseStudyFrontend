@@ -1,0 +1,27 @@
+
+<div><h1>{{msg}}</h1> <b type="submit"  routerLink="/login" >Click Here for Login If Already Register</b></div>
+
+
+
+<form>
+    <div class="mb-3">
+      <label  class="form-label">Email</label>
+      <input type="test" class="form-control" id="email" [(ngModel)]="adminentity.emailId" name="email">
+     
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Username</label>
+        <input type="test" class="form-control" id="userName" [(ngModel)]="adminentity.userName" name="userName">
+       
+      </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="adminentity.password" id="password">
+    </div>
+    
+    <div><button type="submit" class="btn btn-success" (click)="adminRegistration()">Registration</button></div>
+<br>
+
+  </form>
+
+
