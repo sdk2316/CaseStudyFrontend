@@ -25,6 +25,8 @@ import { BookflightComponent } from './bookflight/bookflight.component';
 import { TicketbookedComponent } from './ticketbooked/ticketbooked.component';
 import { UserbookflightComponent } from './userbookflight/userbookflight.component';
 import { AdminregistrationComponent } from './adminregistration/adminregistration.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { AdminregistrationComponent } from './adminregistration/adminregistratio
     BookflightComponent,
     TicketbookedComponent,
     UserbookflightComponent,
-    AdminregistrationComponent
+    AdminregistrationComponent,
+    ContactusComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

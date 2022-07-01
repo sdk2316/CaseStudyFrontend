@@ -3,23 +3,40 @@
 
 
 
-<form>
+<form #adminRegForm="ngForm">
     <div class="mb-3">
       <label  class="form-label">Email</label>
-      <input type="test" class="form-control" id="email" [(ngModel)]="adminentity.emailId" name="email">
+      <input type="email" class="form-control" id="emailId" #emailId="ngModel"
+      required pattern="[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\.[a-z]{2,4}$"
+      [(ngModel)]="adminentity.emailId" name="emailId">
      
+    </div>
+    <div class="text-danger" *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)">
+      <span *ngIf="emailId.errors?.['required']">Email must be fill</span>
+      <span *ngIf="emailId.errors?.['pattern']"> Must contain email like Durgesh@gmail.com</span>
     </div>
     <div class="mb-3">
         <label  class="form-label">Username</label>
-        <input type="test" class="form-control" id="userName" [(ngModel)]="adminentity.userName" name="userName">
+        <input type="text" class="form-control" id="userName" required #userName="ngModel" [(ngModel)]="adminentity.userName" name="userName">
        
       </div>
+      <div class="text-danger" *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+        <span *ngIf="userName.errors?.['required']">Enter your username</span>
+     
+      </div>
+
+
+
     <div class="mb-3">
       <label class="form-label">Password</label>
-      <input type="password" class="form-control" name="password" [(ngModel)]="adminentity.password" id="password">
+      <input type="password" class="form-control" required #password="ngModel" name="password" [(ngModel)]="adminentity.password" id="password">
+    </div>
+    <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+      <span *ngIf="password.errors?.['required']">Enter your password</span>
+     
     </div>
     
-    <div><button type="submit" class="btn btn-success" (click)="adminRegistration()">Registration</button></div>
+    <div><button type="submit" class="btn btn-success" [disabled]="adminRegForm.form.invalid" (click)="adminRegistration()">Registration</button></div>
 <br>
 
   </form>

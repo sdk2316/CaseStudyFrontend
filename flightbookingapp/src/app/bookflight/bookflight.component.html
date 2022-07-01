@@ -34,7 +34,7 @@
        <div class="form-group">
         <b>Enter Email</b>
          <input type="email" class="form-control" #email="ngModel"  name="email"  
-         [(ngModel)]="Bookflight.email" placeholder="Enter Last Email" required pattern="[a-z0-9.]+@[a-z0-9.]+\.[a-z]{2,4}$">
+         [(ngModel)]="Bookflight.email" placeholder="Enter Last Email" required pattern="[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\.[a-z]{2,4}$">
        </div>
        <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
         <span *ngIf="email.errors?.['required']">Email must be fill</span>
@@ -59,7 +59,7 @@
 
        <div class="form-group">
         <b>Enter seat</b>
-         <input type="number" class="form-control" #seat="ngModel" required pattern="[0-9]{1,3}" [(ngModel)]="Bookflight.seat" name="seat"   placeholder="Enter seat">
+         <input type="number" class="form-control" #seat="ngModel" required pattern="[0-9]{1,2}" [(ngModel)]="Bookflight.seat" name="seat"   placeholder="Enter seat">
        </div>
        <div class="text-danger" *ngIf="seat.invalid && (seat.dirty || seat.touched)">
         <span *ngIf="seat.errors?.['required']">Enter seat please</span>
@@ -78,7 +78,7 @@
        
        <div class="form-group">
         <b>Enter your city name</b>
-         <input type="text" class="form-control" #city="ngModel" required pattern="[A-Za-z]{3,10}" [(ngModel)]="Bookflight.address"   name="city"   placeholder="Enter your city name">
+         <input type="text" class="form-control" #city="ngModel" required pattern="[A-Za-z]{3,50}" [(ngModel)]="Bookflight.address"   name="city"   placeholder="Enter your city name">
        </div>
        <div class="text-danger" *ngIf="city.invalid && (city.dirty ||city.touched)">
         <span *ngIf="city.errors?.['required']">Enter city please</span>

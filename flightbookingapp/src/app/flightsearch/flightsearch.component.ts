@@ -24,7 +24,7 @@ export class FlightsearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   // this.getAllSearch();
+    //this.getAllSearch()
    //getAllSearch(fromPlace,toPlace,startDate);
   }
  

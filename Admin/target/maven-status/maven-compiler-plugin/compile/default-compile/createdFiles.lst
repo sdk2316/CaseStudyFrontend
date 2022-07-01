@@ -1,0 +1,16 @@
+com\cognizant\flightbooking\exception\UserNotFoundException.class
+com\cognizant\flightbooking\service\AddFlightServiceImpl.class
+com\cognizant\flightbooking\service\RegistraionService.class
+com\cognizant\flightbooking\entity\AddFlightDetails.class
+com\cognizant\flightbooking\entity\AdminEntity.class
+com\cognizant\flightbooking\service\RegistrationServiceImpl.class
+com\cognizant\flightbooking\exception\FlightNumberAlreadyExistException.class
+com\cognizant\flightbooking\service\IAddFlightService.class
+com\cognizant\flightbooking\exception\ResourceNotFoundException.class
+com\cognizant\flightbooking\config\SwaggerConfig.class
+com\cognizant\flightbooking\controller\RegistrationController.class
+com\cognizant\flightbooking\repossitory\ResistrationRepository.class
+com\cognizant\flightbooking\AdminApplication.class
+com\cognizant\flightbooking\exception\FlightNotFoundException.class
+com\cognizant\flightbooking\repossitory\AddFlightRepository.class
+com\cognizant\flightbooking\controller\AddFlightController.class

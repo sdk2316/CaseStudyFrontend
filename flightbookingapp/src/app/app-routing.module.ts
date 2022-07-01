@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
 import { AddflightComponent } from './addflight/addflight.component';
 import { AdminregistrationComponent } from './adminregistration/adminregistration.component';
 import { AllflightlistComponent } from './allflightlist/allflightlist.component';
+import { AppComponent } from './app.component';
 import { BookflightComponent } from './bookflight/bookflight.component';
+import { ContactusComponent } from './contactus/contactus.component';
 import { FlightinformationComponent } from './flightinformation/flightinformation.component';
 import { FlightsearchComponent } from './flightsearch/flightsearch.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +30,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'allflights', component: AllflightlistComponent},
   { path: 'addflight', component: AddflightComponent},
+  { path: 'contact', component: ContactusComponent},
+  { path: 'about', component: AboutComponent},
   { path: 'adminregistration', component:AdminregistrationComponent},
   
   { path: 'updateflight/:flightNumber', component: UpdateflightComponent},

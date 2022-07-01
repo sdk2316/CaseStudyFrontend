@@ -1,0 +1,4 @@
+com\cognizant\flightbooking\service\AddFlightServiceTest.class
+com\cognizant\flightbooking\repository\AddFlightRepositoryTest.class
+com\cognizant\flightbooking\AdminApplicationTests.class
+com\cognizant\flightbooking\controller\AddFlightControllerTest.class

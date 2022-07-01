@@ -12,9 +12,9 @@
 <body>
   <br>
   <h1><button type="button" routerLink="/allflights" class="btn btn-success text-center"> See All Flights</button></h1><br>
-    <h2 class="text-center">Enter New Flight Information to create</h2>
+    <h2 class="text-center" >Enter New Flight Information to create</h2>
     <div class="col-md-8 offset-md-4">  
-      <p class="msg_success">{{ msg }}</p>
+      <p class="msg_success" class="text-info"><b>{{ msg }}</b></p>
     <form (ngSubmit)="onSubmit()" #add="ngForm">
      
         <div class="form-group ">
@@ -45,7 +45,7 @@
             <label for="fromPlace">from Place</label>
             <input type="text" class="form-control" id="fromPlace" #fromPlace="ngModel" 
              name="fromPlace" [(ngModel)]="addFlight.fromPlace"  placeholder="Enter fromPlace like MUM"
-             required pattern="[A-Za-z]{3,10}">
+             required pattern="[A-Za-z]{2,10}">
           </div>
           <div class="text-danger" *ngIf="fromPlace.invalid && (fromPlace.dirty || fromPlace.touched)">
             <span *ngIf="fromPlace.errors?.['required']">fromPlace must be fill</span>
@@ -55,7 +55,7 @@
           <div class="form-group">
             <label for="toPlace">to Place</label>
             <input type="text" class="form-control" id="toPlace" #toPlace="ngModel" name="toPlace" 
-            [(ngModel)]="addFlight.toPlace"  placeholder="Enter toPlace like DEL" required pattern="[A-Za-z]{3,10}">
+            [(ngModel)]="addFlight.toPlace"  placeholder="Enter toPlace like DEL" required pattern="[A-Za-z]{2,10}">
           </div>
           <div class="text-danger" *ngIf="toPlace.invalid && (toPlace.dirty || toPlace.touched)">
             <span *ngIf="toPlace.errors?.['required']">toPlace must be fill</span>
@@ -95,7 +95,11 @@
         
           <div class="form-group">
             <label for="dateOfDeparture"> Date of Departure</label>
-            <input type="date" class="form-control datepicker" name="dateOfDeparture" id="dateOfDeparture" [(ngModel)]="addFlight.dateOfDeparture" aria-describedby="dateOfDeparture" placeholder="Enter date Of Departure">
+            <input type="date" class="form-control datepicker" required #dateOfDeparture="ngModel" name="dateOfDeparture" id="dateOfDeparture" [(ngModel)]="addFlight.dateOfDeparture" aria-describedby="dateOfDeparture" placeholder="Enter date Of Departure">
+          </div>
+          <div class="text-danger" *ngIf="dateOfDeparture.invalid && (dateOfDeparture.dirty ||dateOfDeparture.touched)">
+            <span *ngIf="dateOfDeparture.errors?.['required']">Enter meal please</span>
+            <span *ngIf="dateOfDeparture.errors?.['pattern']">meal must contain characters</span>
           </div>
           <br>
 

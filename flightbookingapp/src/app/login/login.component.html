@@ -1,18 +1,28 @@
 <h2>Enter Your Admin credentials to login</h2>
+<h1 class="text-danger">{{msg}}</h1>
 
-<form>
+<form #adminLoginForm="ngForm">
     <div class="mb-3">
       <label  class="form-label">Username</label>
-      <input type="test" class="form-control" id="username" [(ngModel)]="adminentity.emailId" name="email">
-      <div id="emailHelp" class="form-text"> never share your credentials with anyone else.</div>
+      <input type="email" class="form-control" id="emailId" #emailId="ngModel" 
+      required pattern="[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\.[a-z]{2,4}$" [(ngModel)]="adminentity.emailId" name="emailId">
+     
+    </div>
+    <div class="text-danger" *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)">
+      <span *ngIf="emailId.errors?.['required']">Email must be fill</span>
+      <span *ngIf="emailId.errors?.['pattern']"> Must contain email like Durgesh@gmail.com</span>
     </div>
     <div class="mb-3">
       <label class="form-label">Password</label>
-      <input type="password" class="form-control" name="password" [(ngModel)]="adminentity.password" id="password">
+      <input type="password" class="form-control" required #password="ngModel" name="password" [(ngModel)]="adminentity.password" id="password">
+    </div>
+    <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+      <span *ngIf="password.errors?.['required']">Enter your password</span>
+     
     </div>
     
-    <div><button type="submit" class="btn btn-success" (click)="adminLogin()">Login</button></div>
+    <div><button type="submit" class="btn btn-success" [disabled]="adminLoginForm.form.invalid" (click)="adminLogin()">Login</button></div>
 <br>
-<div><button type="submit" class="btn btn-success" routerLink="/adminregistration" >Click Here for registration</button></div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-outline-dark" routerLink="/adminregistration" >Click Here for registration</button></div>
 
   </form>

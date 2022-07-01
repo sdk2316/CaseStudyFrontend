@@ -11,9 +11,8 @@ import { AdminregistrationService } from '../adminregistration.service';
 export class LoginComponent implements OnInit {
   adminentity:Adminentity=new Adminentity();
 
-  // email:string=''
-  // password:string=''
-  msg:string=''
+  
+  msg:any=''
 
   constructor(private adminregistrationService:AdminregistrationService, private router:Router) { }
 
@@ -22,8 +21,8 @@ export class LoginComponent implements OnInit {
   }
 
   adminLogin(){
-    const observable = this.adminregistrationService.AdminLogin(this.adminentity);
-
+    
+    const observable = this.adminregistrationService. AdminLogin(this.adminentity);
     observable.subscribe(
       (response: any) => {
         console.log(response);
